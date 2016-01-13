@@ -265,3 +265,10 @@ unsigned int Golay23_Encode(unsigned int cw)
   return((cw<<12)|c);    /* assemble codeword */
 }
 
+#define MM 8
+#include "ReedSolomon.c"
+
+#undef MM
+#define MM 6
+#include "ReedSolomon.c"
+
