@@ -419,6 +419,11 @@ main (int argc, char **argv)
         }
     }
 
+  if (audio_in_dev == NULL) {
+    printf("Error, audio input device not specified (use -i parameter)\n");
+    return -1;
+  }
+
   if (openAudioInDevice (&opts, audio_in_dev) < 0) {
     printf ("Error, couldn't open file %s\n", audio_in_dev);
     return -1;
